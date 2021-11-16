@@ -14,7 +14,9 @@ class TSV2CSVPlugin:
       csvfile = open(filename, 'w')
       
       for tsvline in self.tsvfile:
+         if (tsvline[0] == '\t'):
+             tsvline = tsvline[1:]
          csvfile.write(tsvline.replace('\t',','))
-
+         
 
 
